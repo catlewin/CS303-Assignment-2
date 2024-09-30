@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "LinkedList.h"
+#include "Stack.h"
 
 using namespace std;
 
@@ -15,14 +16,7 @@ int main() {
   }
 
   cout << "Original Int List\n";
-  cout << "Index\t Data\n";
-  int count = 0;
-  Node<int>* tempN = myList.front();
-  while (tempN != nullptr){
-      cout << count << "\t\t\t" << tempN->data << endl;
-      count++;
-      tempN = tempN->nextPtr;
-  }
+  myList.print();
 
   cout << "\nModifications:\n"
           "  .pop_back()\n"
@@ -40,14 +34,7 @@ int main() {
 
 
   cout << "Modified Int List\n";
-  cout << "Index\t Data\n";
-  count = 0;
-  tempN = myList.front();
-  while (tempN != nullptr){
-    cout << count << "\t\t\t" << tempN->data << endl;
-    count++;
-    tempN = tempN->nextPtr;
-  }
+  myList.print();
 
   cout << endl << endl;
 
@@ -59,14 +46,7 @@ int main() {
   strList.push_back("DesMoines");
 
   cout << "Original Str List\n";
-  cout << "Index\t Data\n";
-  count = 0;
-  Node<string>* tempS = strList.front();
-  while (tempS != nullptr){
-      cout << count << "\t\t\t" << tempS->data << endl;
-      count++;
-      tempS = tempS->nextPtr;
-  }
+  strList.print();
 
   cout << endl << endl;
   cout << "\nModifications:\n"
@@ -87,14 +67,28 @@ int main() {
 
 
   cout << "Modified Str List\n";
-  cout << "Index\t Data\n";
-  count = 0;
-  tempS = strList.front();
-  while (tempS != nullptr){
-      cout << count << "\t\t\t" << tempS->data << endl;
-      count++;
-      tempS = tempS->nextPtr;
-  }
+  strList.print();
 
-  cout << "Part Two:\n\n";
+  cout << "\n\nPart Two:\n\n";
+  Stack myStack;
+  for (int i = 0; i < 10; i++){
+      myStack.insert(i);
+  }
+  cout << "Original Stack\n";
+  myStack.print();
+  cout << "\nIs the stack empty? (0 - no, 1- yes) ==> " << myStack.empty();
+    cout << "\nModifications:\n"
+            "  .remove()\n"
+            "  .insert(4)\n";
+
+  myStack.remove();
+  myStack.insert(4);
+
+  cout << endl << "Top of stack: " << myStack.top() << endl;
+
+  cout << "\n\nModified Stack\n";
+  myStack.print();
+
+  cout << "\nAverage of current stack: " << myStack.avg();
+
 }

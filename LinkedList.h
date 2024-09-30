@@ -191,4 +191,15 @@ public:
             return num_items;
         }
     };
+
+    void print(){
+        int count = 0;
+        Node<T>* tempN = front();
+        cout << "Index\t Data\n";
+        while (tempN != nullptr){
+            cout << count << "\t\t\t" << tempN->data << endl;
+            count++;
+            tempN = tempN->nextPtr;
+        }
+    };
 };
