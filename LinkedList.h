@@ -8,11 +8,11 @@ template<class T>
 struct Node {
     T data;
     Node *nextPtr;
-    explicit Node(T d, Node* nextP = nullptr);
+    explicit Node(T d, Node* nextP = nullptr); //Node constructor
 };
 
 template<class T>
-Node<T>::Node(T d, Node *nextP) : data(d), nextPtr(nextP) {}
+Node<T>::Node(T d, Node *nextP) : data(d), nextPtr(nextP) {} //Node constructor
 
 // Linked class declaration
 template<class T>
@@ -36,7 +36,7 @@ public:
         headPtr = nullptr;
     };
 
-    //function declarations
+    //function declarations & definitions
 
     //POST: New node created at front of linked list
     void push_front(T d){
@@ -146,7 +146,7 @@ public:
         }
     };
 
-    //POST:
+    //POST: returns true if node at index successfully removed, false if unsuccessful
     bool remove(size_t index){
         if (index >= num_items){ //index out of bounds or empty list
             return false;
@@ -174,6 +174,7 @@ public:
         }
     };
 
+    //POST: returns index of value d in linked list
     size_t find(T d){
         if (empty()){
             return 0;
@@ -192,6 +193,7 @@ public:
         }
     };
 
+    //POST: displays linked list
     void print(){
         int count = 0;
         Node<T>* tempN = front();

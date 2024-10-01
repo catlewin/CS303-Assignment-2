@@ -9,7 +9,9 @@ using namespace std;
 
 
 int main() {
+  //PART ONE -- Template Single Linked List Instantiations (int & str)
   cout << "PART ONE:\n\n";
+  //INTEGER linked list instantiation
   Linked<int> myList;
   for (int i = 0; i < 10; i++){ // load LL with integers
     myList.push_back(i);
@@ -38,6 +40,7 @@ int main() {
 
   cout << endl << endl;
 
+  //STRING linked list instantiation
   Linked<string> strList;
   strList.push_back("abc");
   strList.push_back("123");
@@ -69,6 +72,7 @@ int main() {
   cout << "Modified Str List\n";
   strList.print();
 
+  //PART TWO -- Stack class instantiation
   cout << "\n\nPart Two:\n\n";
   Stack myStack;
   for (int i = 0; i < 10; i++){
@@ -76,7 +80,6 @@ int main() {
   }
   cout << "Original Stack\n";
   myStack.print();
-  cout << "\nIs the stack empty? (0 - no, 1- yes) ==> " << myStack.empty();
     cout << "\nModifications:\n"
             "  .remove()\n"
             "  .insert(4)\n";
@@ -84,7 +87,6 @@ int main() {
   myStack.remove();
   myStack.insert(4);
 
-  cout << endl << "Top of stack: " << myStack.top() << endl;
 
   cout << "\n\nModified Stack\n";
   myStack.print();
